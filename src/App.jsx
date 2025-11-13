@@ -7,7 +7,7 @@ const BACKEND = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
 function Badge({ icon: Icon, label }) {
   return (
     <div className="flex items-center gap-2 bg-white/60 backdrop-blur px-3 py-1.5 rounded-full shadow-sm border border-white/40">
-      <Icon className="w-4 h-4 text-blue-600" />
+      <Icon className="w-4 h-4 text-indigo-600" />
       <span className="text-xs font-medium text-gray-700">{label}</span>
     </div>
   )
@@ -18,12 +18,12 @@ function SectionTitle({ icon: Icon, title, subtitle }) {
     <div className="flex items-end justify-between">
       <div>
         <div className="flex items-center gap-2">
-          <Icon className="w-5 h-5 text-blue-600" />
+          <Icon className="w-5 h-5 text-indigo-600" />
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
         </div>
         {subtitle && <p className="text-sm text-gray-500 mt-1">{subtitle}</p>}
       </div>
-      <div className="h-px flex-1 bg-gradient-to-r from-blue-600/30 to-transparent ml-6" />
+      <div className="h-px flex-1 bg-gradient-to-r from-indigo-600/30 to-transparent ml-6" />
     </div>
   )
 }
@@ -34,7 +34,7 @@ function ProjectCard({ title, description, tags, link }) {
       <div className="flex items-start justify-between">
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
         {link && (
-          <a href={link} target="_blank" className="text-blue-600 hover:text-blue-700 flex items-center gap-1 text-sm">
+          <a href={link} target="_blank" className="text-indigo-600 hover:text-indigo-700 flex items-center gap-1 text-sm">
             View <ExternalLink className="w-3.5 h-3.5" />
           </a>
         )}
@@ -42,7 +42,7 @@ function ProjectCard({ title, description, tags, link }) {
       <p className="text-sm text-gray-600 mt-2">{description}</p>
       <div className="flex flex-wrap gap-2 mt-4">
         {tags?.map((t) => (
-          <span key={t} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full border border-blue-100">{t}</span>
+          <span key={t} className="text-xs bg-indigo-50 text-indigo-700 px-2 py-1 rounded-full border border-indigo-100">{t}</span>
         ))}
       </div>
     </div>
@@ -71,7 +71,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-[radial-gradient(1200px_600px_at_50%_-50%,rgba(56,189,248,0.35),transparent),radial-gradient(800px_400px_at_0%_0%,rgba(167,139,250,0.35),transparent)]">
+    <div className="min-h-screen w-full bg-[radial-gradient(1200px_600px_at_50%_-50%,rgba(37,99,235,0.25),transparent),radial-gradient(800px_400px_at_0%_0%,rgba(79,70,229,0.25),transparent)]">
       {/* Hero */}
       <header className="relative h-[72vh] sm:h-[80vh] overflow-hidden">
         <div className="absolute inset-0">
@@ -92,13 +92,13 @@ export default function App() {
               I design and develop clean, performant applications with a focus on delightful UX and robust engineering.
             </p>
             <div className="flex items-center gap-3 mt-6">
-              <a href="#projects" className="px-5 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">View Projects</a>
+              <a href="#projects" className="px-5 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition">View Projects</a>
               <a href="#contact" className="px-5 py-2.5 bg-white text-gray-900 rounded-full border border-gray-200 hover:border-gray-300 transition">Contact</a>
             </div>
             <div className="flex items-center gap-4 mt-6 text-gray-700">
-              <a href="mailto:you@example.com" className="flex items-center gap-2 hover:text-blue-600 transition"><Mail className="w-4 h-4"/> Email</a>
-              <a href="https://github.com/" target="_blank" className="flex items-center gap-2 hover:text-blue-600 transition"><Github className="w-4 h-4"/> GitHub</a>
-              <a href="https://linkedin.com/" target="_blank" className="flex items-center gap-2 hover:text-blue-600 transition"><Linkedin className="w-4 h-4"/> LinkedIn</a>
+              <a href="mailto:you@example.com" className="flex items-center gap-2 hover:text-indigo-600 transition"><Mail className="w-4 h-4"/> Email</a>
+              <a href="https://github.com/" target="_blank" className="flex items-center gap-2 hover:text-indigo-600 transition"><Github className="w-4 h-4"/> GitHub</a>
+              <a href="https://linkedin.com/" target="_blank" className="flex items-center gap-2 hover:text-indigo-600 transition"><Linkedin className="w-4 h-4"/> LinkedIn</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function App() {
                 { time: '2024', title: 'Cloud Certifications', place: 'AWS/GCP' },
               ].map((e, idx) => (
                 <li key={idx} className="mb-8 ms-6">
-                  <span className="absolute -start-1.5 mt-1.5 w-3 h-3 bg-blue-600 rounded-full border border-white"></span>
+                  <span className="absolute -start-1.5 mt-1.5 w-3 h-3 bg-indigo-600 rounded-full border border-white"></span>
                   <time className="text-xs text-gray-500">{e.time}</time>
                   <h3 className="text-base font-semibold text-gray-900">{e.title}</h3>
                   <p className="text-sm text-gray-600">{e.place}</p>
@@ -180,22 +180,22 @@ export default function App() {
             <form onSubmit={handleSubmit} className="grid gap-4 sm:grid-cols-2 mt-6">
               <div className="sm:col-span-1">
                 <label className="text-sm text-gray-700">Name</label>
-                <input value={form.name} onChange={(e)=>setForm({...form, name: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <input value={form.name} onChange={(e)=>setForm({...form, name: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" />
               </div>
               <div className="sm:col-span-1">
                 <label className="text-sm text-gray-700">Email</label>
-                <input type="email" value={form.email} onChange={(e)=>setForm({...form, email: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <input type="email" value={form.email} onChange={(e)=>setForm({...form, email: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" />
               </div>
               <div className="sm:col-span-2">
                 <label className="text-sm text-gray-700">Subject</label>
-                <input value={form.subject} onChange={(e)=>setForm({...form, subject: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <input value={form.subject} onChange={(e)=>setForm({...form, subject: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" />
               </div>
               <div className="sm:col-span-2">
                 <label className="text-sm text-gray-700">Message</label>
-                <textarea rows="4" value={form.message} onChange={(e)=>setForm({...form, message: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <textarea rows="4" value={form.message} onChange={(e)=>setForm({...form, message: e.target.value})} required className="mt-1 w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white" />
               </div>
               <div className="sm:col-span-2 flex items-center gap-3">
-                <button type="submit" className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition disabled:opacity-60" disabled={status.state==='loading'}>
+                <button type="submit" className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition disabled:opacity-60" disabled={status.state==='loading'}>
                   <Send className="w-4 h-4"/> Send
                 </button>
                 {status.state !== 'idle' && (
